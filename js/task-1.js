@@ -1,9 +1,9 @@
-function makeTransaction(quantity, pricePerDroid) {
-  return `You ordered ${quantity} droids worth ${quantity * pricePerDroid} credits!`;
-}
+const refs = {
+  items: document.querySelectorAll('ul#categories .item'),
+};
 
-console.group('TASK N1');
-console.log(makeTransaction(5, 3000)); // "You ordered 5 droids worth 15000 credits!"
-console.log(makeTransaction(3, 1000)); // "You ordered 3 droids worth 3000 credits!"
-console.log(makeTransaction(10, 500)); // "You ordered 10 droids worth 5000 credits!"
-console.groupEnd();
+console.log(`Number of categories: ${refs.items.length}`);
+refs.items.forEach(element => {
+  console.log(`Category: ${element.firstElementChild.textContent}`);
+  console.log(`Elements: ${element.lastElementChild.children.length}`);
+});
